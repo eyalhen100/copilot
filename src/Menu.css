@@ -1,0 +1,76 @@
+/* src/Menu.css */
+
+/* Basic styling for the top horizontal menu */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;  /* Menu now directly at the top of the page */
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  z-index: 999;
+}
+
+.menu-logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;  /* Hide the toggle button for desktop view */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.menu-links a:hover {
+  background-color: #575757;
+  padding-left: 5px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;  /* Show the toggle button for mobile view */
+  }
+
+  .menu-links {
+    display: none; /* Hide the menu links by default on mobile */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .menu-links.open {
+    display: flex;  /* Show menu when toggle button is clicked */
+  }
+
+  .menu-links a {
+    width: 100%;
+    padding: 10px;
+  }
+}
